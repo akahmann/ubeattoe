@@ -23,7 +23,6 @@ void catsGame();
 
 struct Selection
 {
-   char value; //priority value
    int r; //row
    int c; //col
 };
