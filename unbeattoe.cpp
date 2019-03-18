@@ -202,6 +202,8 @@ void comPlay(char board[][3], bool first)
       else
          scenario.push('1');
       analyzeBoard(board, playerChar, scenario);
+      if (scenario.size() > 5)
+         return;
       handleScenario(board, first, scenario, row, col);
    }
 
@@ -627,7 +629,7 @@ bool isValid(char board[][3], std::string coord)
 
    if (isalpha(coord[0]) && isdigit(coord[1]))
    {
-      if (toupper(coord[0]) < 65 || toupper(coord[0]) > 68)
+      if (toupper(coord[0]) < 65 || toupper(coord[0]) > 67)
       {
          std::cout << "Invalid coordinates\n";
          return false;
@@ -650,7 +652,7 @@ bool isValid(char board[][3], std::string coord)
 
    if (isalpha(coord[1]) && isdigit(coord[0]))
    {
-      if (toupper(coord[1]) < 65 || toupper(coord[1]) > 68)
+      if (toupper(coord[1]) < 65 || toupper(coord[1]) > 67)
       {
          std::cout << "Invalid coordinates\n";
          return false;
